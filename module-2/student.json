@@ -1,0 +1,102 @@
+{
+  "s001": {
+    "name": "Abrar Rahman Chowdhury",
+    "age": 15,
+    "class": "Class 10",
+    "roll": 1,
+    "mathMarks": 95,
+    "englishMarks": 88,
+    "scienceMarks": 92,
+    "phone": "+8801711002233"
+  },
+  "s002": {
+    "name": "Nusrat Jahan Nisha",
+    "age": 15,
+    "class": "Class 10",
+    "roll": 2,
+    "mathMarks": 89,
+    "englishMarks": 94,
+    "scienceMarks": 91,
+    "phone": "+8801819445566"
+  },
+  "s003": {
+    "name": "Tahmid Hasan Anik",
+    "age": 16,
+    "class": "Class 10",
+    "roll": 3,
+    "mathMarks": 78,
+    "englishMarks": 82,
+    "scienceMarks": 85,
+    "phone": "+8801552778899"
+  },
+  "s004": {
+    "name": "Fariha Islam",
+    "age": 15,
+    "class": "Class 10",
+    "roll": 4,
+    "mathMarks": 99,
+    "englishMarks": 96,
+    "scienceMarks": 98,
+    "phone": "+8801911112233"
+  },
+  "s005": {
+    "name": "Sajid Ahmed",
+    "age": 15,
+    "class": "Class 10",
+    "roll": 5,
+    "mathMarks": 65,
+    "englishMarks": 74,
+    "scienceMarks": 72,
+    "phone": "+8801312345678"
+  },
+  "s006": {
+    "name": "Anika Tabassum",
+    "age": 16,
+    "class": "Class 10",
+    "roll": 6,
+    "mathMarks": 84,
+    "englishMarks": 90,
+    "scienceMarks": 87,
+    "phone": "+8801675556677"
+  },
+  "s007": {
+    "name": "Mahir Asif",
+    "age": 15,
+    "class": "Class 10",
+    "roll": 7,
+    "mathMarks": 72,
+    "englishMarks": 68,
+    "scienceMarks": 75,
+    "phone": "+8801712889900"
+  },
+  "s008": {
+    "name": "Sadia Afrin",
+    "age": 15,
+    "class": "Class 10",
+    "roll": 8,
+    "mathMarks": 93,
+    "englishMarks": 91,
+    "scienceMarks": 96,
+    "phone": "+8801811223344"
+  },
+  "s009": {
+    "name": "Tanvir Rahman",
+    "age": 16,
+    "class": "Class 10",
+    "roll": 9,
+    "mathMarks": 81,
+    "englishMarks": 79,
+    "scienceMarks": 83,
+    "phone": "+8801919556677"
+  },
+  "s010": {
+    "name": "Mehnaz Mustafa",
+    "age": 15,
+    "class": "Class 10",
+    "roll": 10,
+    "mathMarks": 88,
+    "englishMarks": 85,
+    "scienceMarks": 89,
+    "phone": "+8801553990011"
+  }
+}
