@@ -4,6 +4,7 @@ from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from pydantic import BaseModel,Field
 from fastapi.responses import JSONResponse
+from router.auth import get_current_user
 
 from database import engine, sessionLocal
 from models import Base, Todo
@@ -38,6 +39,7 @@ def get_db():
     finally:
         db.close()  
 db_dependency=Annotated[Session, Depends(get_db)]
+user_dependency = Annotated[dict,Depends(get_current_user)]
 
 @app.get('/')
 def get_todos(db: db_dependency): 
@@ -54,8 +56,11 @@ def get_todos_by_id(db: db_dependency, todo_id:int):
 
 
 @app.post('/create')
-def crate_todos(db: db_dependency, new_todo:Todos): 
-    todo_model= Todo(**new_todo.model_dump())  
+def crate_todos(user:user_dependency, db: db_dependency, new_todo:Todos): 
+
+    if user is None:
+        raise HTTPException(status_code=401,detail="Failed authentication ")
+    todo_model= Todo(**new_todo.model_dump(), owner_todo=user.get('id') )  
     db.add(todo_model)
     db.commit()  
     return JSONResponse(status_code=201,content={"message":"todo created successfully"})
