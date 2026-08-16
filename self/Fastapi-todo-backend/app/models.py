@@ -16,5 +16,5 @@ class User(Base):
     id = Column(Integer,primary_key=True)
     username=Column(String, unique=True)
     email=Column(String, unique=True)
-    hashed_password=Column(String)
+    password=Column(String)
     user_role=Column(String)
