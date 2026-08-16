@@ -2,11 +2,11 @@
 from typing_extensions import Annotated
 from sqlalchemy.orm import Session
 from app.database import Base,engine,get_db 
-from fastapi import Depends, FastAPI
+from fastapi import Depends, FastAPI,status,HTTPException
 from fastapi.responses import JSONResponse
 import app.models as models
 from app.models import Todo,User
-from app.schemas import TodoBase 
+from app.schemas import TodoBase, TodoResponse
 
 
 
@@ -35,12 +35,25 @@ def create_todo(new_todo:TodoBase , db: db_dependency):
 
 @app.get("/todos")
 def read_todos(db: db_dependency):
-    todos=db.query(Todo).all()
-    return JSONResponse(status_code=200, content={"todos": todos})
+    return db.query(Todo).all()  
 
-@app.get("/todo/{todo_id}")
-def read_todo_by_id():
-    pass
+# @app.get("/todo/{todo_id}")
+# def read_todo_by_id(todo_id:int, db:db_dependency):
+#      todo=db.query().filter(Todo.id == todo_id).first()
+#      if todo is None:
+#          return JSONResponse(status_code=status.HTTP_404_NOT_FOUND,content={"message":"Todo Not Found"})
+
+#      return todo
+
+
+@app.get("/todos/{todo_id}",response_model=TodoResponse ,
+         status_code=status.HTTP_200_OK)
+def read_todo_by_id(todo_id:int, db:db_dependency):
+     todo=db.query(Todo).filter(Todo.id == todo_id).first()
+     if todo is None:
+         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Todo not Found ")
+
+     return todo
 
 @app.put("/todo/{todo_id}")
 def update_todo_by_id():
